@@ -1,0 +1,71 @@
+/* Write your CSS here */
+* {
+  font-family: Roboto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sub-container {
+  background-color: #150b3e;
+  padding: 40px;
+  width: 30%;
+  border-radius: 30px;
+}
+
+.S-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  font-size: 8px;
+  font-weight: 100;
+  border-radius: 50%;
+  background-color: #c7d2fe;
+}
+
+.head-1 {
+  color: #c7d2fe;
+  font-size: 20px;
+  font-weight: 200;
+  margin-left: 20px;
+}
+
+.sub-part-1 {
+  display: flex;
+  align-items: center;
+}
+
+.para-1 {
+  color: #585076;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.rupee-head {
+  color: #d4d2db;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.rupe-para {
+  font-size: 12px;
+  color: #585076;
+}
+
+.subpart-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head-2 {
+  color: aliceblue;
+  font-weight: 400;
+  font-size: 25px;
+}
