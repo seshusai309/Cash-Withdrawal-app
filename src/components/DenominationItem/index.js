@@ -4,9 +4,13 @@ import './index.css'
 
 class DenominationItem extends Component {
   render() {
-    const {value} = this.props
+    const {minusFunction, value, id} = this.props
+    const onclicked = uniqueId => {
+      minusFunction(uniqueId)
+      console.log('Hello')
+    }
     return (
-      <button type="button" className="btn">
+      <button onClick={onclicked(id)} type="button" className="btn">
         {value}
       </button>
     )

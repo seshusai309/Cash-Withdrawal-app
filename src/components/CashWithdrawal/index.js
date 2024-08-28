@@ -3,6 +3,10 @@ import DenominationItem from '../DenominationItem'
 import './index.css'
 
 class CashWithdrawal extends Component {
+  clicked = uniqueId => {
+    console.log(uniqueId)
+  }
+
   render() {
     const {denominationsList} = this.props
     return (
@@ -28,7 +32,12 @@ class CashWithdrawal extends Component {
 
           <div className="list-btns">
             {denominationsList.map(each => (
-              <DenominationItem value={each.value} />
+              <DenominationItem
+                minusFunction={this.clicked}
+                key={each.id}
+                id={each.id}
+                value={each.value}
+              />
             ))}
           </div>
         </div>
