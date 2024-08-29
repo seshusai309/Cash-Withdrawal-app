@@ -3,12 +3,20 @@ import DenominationItem from '../DenominationItem'
 import './index.css'
 
 class CashWithdrawal extends Component {
-  clicked = uniqueId => {
-    console.log(uniqueId)
+  state = {value: 2000}
+
+  decrease = num => {
+    this.setState(prevState => {
+      if (prevState.value - num < 0) {
+        return {value: prevState.value}
+      }
+      return {value: prevState.value - num}
+    })
   }
 
   render() {
     const {denominationsList} = this.props
+    const {value} = this.state
     return (
       <div className="container">
         <div className="sub-container">
@@ -22,24 +30,24 @@ class CashWithdrawal extends Component {
           <div className="subpart-2">
             <p className="para-1">Your Balance</p>
             <div className="rupess-part">
-              <h1 className="rupee-head">2000</h1>
+              <p className="rupee-head">{value}</p>
               <p className="rupe-para">In Rupees</p>
             </div>
           </div>
 
-          <h1 className="head-2">Withdraw</h1>
+          <p className="head-2">Withdraw</p>
           <p className="para-1">CHOOSE SUM (IN RUPEES)</p>
 
-          <div className="list-btns">
+          <ul className="list-btns">
             {denominationsList.map(each => (
               <DenominationItem
-                minusFunction={this.clicked}
+                functiondecrease={this.decrease}
                 key={each.id}
                 id={each.id}
                 value={each.value}
               />
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     )
